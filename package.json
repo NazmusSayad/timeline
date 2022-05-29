@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "live": "live-server --port=80 --host=localhost",
+    "sass:compile": "sass ./style/style.css ./style/style.css",
+    "sass:watch": "sass --watch ./style/style.css ./style/style.css"
+  }
+}

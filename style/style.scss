@@ -1,0 +1,17 @@
+// Importing All files
+@import "abstracts/breakpoints";
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/keyframes";
+@import "abstracts/mixins";
+@import "abstracts/placeholders";
+
+@import "base/main";
+@import "base/fonts";
+@import "base/utility";
+@import "base/buttons";
+@import "base/typography";
+
+@import "partials/header";
+@import "partials/navigation";
+@import "partials/footer";
