@@ -1,0 +1,72 @@
+#timeLine {
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: gray;
+    height: 100%;
+    width: 1rem;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.container {
+  position: relative;
+  margin: 3rem;
+
+  &::before {
+    content: "";
+    display: block;
+    height: 5rem;
+    width: 0;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    z-index: -1;
+    transition: width 0.8s ease-in-out;
+    background: lightsteelblue;
+  }
+
+  &:nth-child(odd) {
+    text-align: right;
+
+    .item {
+      transform: translateX(calc(50vw));
+      background: lightsalmon;
+    }
+
+    &::before {
+      left: 50%;
+      background: lightsalmon;
+    }
+  }
+
+  .item {
+    display: inline-block;
+    height: 20rem;
+    width: 45%;
+    background: lightsteelblue;
+    transition: transform 0.75s ease-in-out;
+    transform: translateX(calc(-100vw - 5rem));
+  }
+
+  &.active {
+    .item {
+      transform: translateX(0);
+    }
+
+    &:nth-child(odd) {
+      .item {
+        transform: translateX(0);
+      }
+    }
+
+    &::before {
+      width: 5%;
+    }
+  }
+}
