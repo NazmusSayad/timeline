@@ -1,8 +1,10 @@
-#timeLine {
+@import 'reset';
+
+#timeline {
   position: relative;
 
   &::before {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     background: gray;
@@ -19,7 +21,7 @@
   margin: 3rem;
 
   &::before {
-    content: "";
+    content: '';
     display: block;
     height: 5rem;
     width: 0;

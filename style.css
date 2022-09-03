@@ -1,0 +1,111 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+  user-select: none;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  overflow-x: hidden;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.-- {
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#timeline {
+  position: relative;
+}
+#timeline::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: gray;
+  height: 100%;
+  width: 1rem;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container {
+  position: relative;
+  margin: 3rem;
+}
+.container::before {
+  content: "";
+  display: block;
+  height: 5rem;
+  width: 0;
+  position: absolute;
+  top: 0;
+  right: 50%;
+  z-index: -1;
+  transition: width 0.8s ease-in-out;
+  background: lightsteelblue;
+}
+.container:nth-child(odd) {
+  text-align: right;
+}
+.container:nth-child(odd) .item {
+  transform: translateX(50vw);
+  background: lightsalmon;
+}
+.container:nth-child(odd)::before {
+  left: 50%;
+  background: lightsalmon;
+}
+.container .item {
+  display: inline-block;
+  height: 20rem;
+  width: 45%;
+  background: lightsteelblue;
+  transition: transform 0.75s ease-in-out;
+  transform: translateX(calc(-100vw - 5rem));
+}
+.container.active .item {
+  transform: translateX(0);
+}
+.container.active:nth-child(odd) .item {
+  transform: translateX(0);
+}
+.container.active::before {
+  width: 5%;
+}
+
+/*# sourceMappingURL=style.css.map */
